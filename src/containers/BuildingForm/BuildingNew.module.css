@@ -1,0 +1,19 @@
+.BuildingNew {
+    text-align: center;
+}
+
+/* .BuildingNew form label {
+
+} */
+
+.BuildingNew form input {
+    height: 20px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.BuildingNew form span {
+    display: block;
+    margin-bottom: 20px;
+    color: red;
+}

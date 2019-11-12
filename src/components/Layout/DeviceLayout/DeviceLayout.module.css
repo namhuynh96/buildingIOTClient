@@ -1,0 +1,8 @@
+.Online {
+  position: absolute;
+  left: -12px;
+  background-color: #2ba20a;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}

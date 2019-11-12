@@ -1,0 +1,25 @@
+.Users {
+  text-align: center;
+  margin-top: 72px;
+}
+
+.Users li {
+  margin: 10px;
+  padding: 3px;
+  border-bottom: 1px solid green;
+}
+
+.Users li:hover {
+  cursor: pointer;
+  background-color: green;
+}
+
+.ChoosedUser {
+  background-color: green;
+}
+
+.UserData {
+  margin-top: 100px;
+}
+
+

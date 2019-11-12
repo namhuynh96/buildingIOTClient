@@ -1,0 +1,21 @@
+{
+    "local": {
+        "awscloudformation": {
+            "AuthRoleName": "client-local-20191009104043-authRole",
+            "UnauthRoleArn": "arn:aws:iam::403540845132:role/client-local-20191009104043-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::403540845132:role/client-local-20191009104043-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "client-local-20191009104043-deployment",
+            "UnauthRoleName": "client-local-20191009104043-unauthRole",
+            "StackName": "client-local-20191009104043",
+            "StackId": "arn:aws:cloudformation:eu-central-1:403540845132:stack/client-local-20191009104043/199b3050-ea68-11e9-912a-02d441bc2b52"
+        },
+        "categories": {
+            "auth": {
+                "client1bf75499": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Google\",\"client_id\":\"542440268232-ue8mg64lk03kpbqkk2h3am3tbdcb9lf9.apps.googleusercontent.com\",\"client_secret\":\"4fLjn2uEoRReUydt1QQPY6rZ\"}]"
+                }
+            }
+        }
+    }
+}
