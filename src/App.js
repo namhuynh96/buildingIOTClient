@@ -3,13 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { Auth, Hub } from "aws-amplify";
 import axios from "axios";
-
+import withErrorHandler from "./hoc/withErrorHandler/withErrorHandler";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./shared/theme";
 import AppLayout from "./components/Layout/AppLayout/AppLayout";
 import Authenticate from "./containers/Auth/Authenticate";
 import Logout from "./containers/Auth/Logout/Logout";
-import Landing from "./containers/Landing/Landing";
 import Dashboard from "./containers/Dashboard/Dashboard";
 import Users from "./containers/Users/Users";
 import * as actions from "./store/actions";
@@ -41,7 +40,7 @@ const App = props => {
           axios.defaults.headers.common["Authorization"] =
             "Bearer " + data.idToken.jwtToken;
           setIsAuth(true);
-          
+
           dispatch(actions.setAdminOrUserData());
         });
       })
@@ -82,8 +81,7 @@ const App = props => {
 
   let routes = (
     <Switch>
-      <Route path="/login" component={Authenticate} />
-      <Route path="/" component={Landing} />
+      <Route path="/" component={Authenticate} />
       <Redirect to="/" />
     </Switch>
   );
@@ -109,4 +107,4 @@ const App = props => {
   );
 };
 
-export default App;
+export default withErrorHandler(App);

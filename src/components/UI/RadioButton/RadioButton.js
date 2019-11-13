@@ -5,6 +5,7 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import classes from "./RadioButton.module.css";
+import Radio from "@material-ui/core/Radio";
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -44,12 +45,11 @@ const RadioButton = props => {
   return (
     <div className={classes.RadioButton}>
       <label>
-        <input
-          type="radio"
-          name={props.name}
-          value={props.value}
-          onChange={props.changed}
+        <Radio
           checked={props.checked}
+          onChange={props.changed}
+          value={props.value}
+          name={props.name}
         />
         {props.label}
         {editAndDeleteButtons}

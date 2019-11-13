@@ -32,8 +32,7 @@ const AddDeviceForm = props => {
       value: "",
       validation: {
         required: true,
-        checkDuplicatedElementsInArray: true,
-        checkAWSIotPattern: true
+        checkDuplicatedElementsInArray: true
       },
       errorMessage: null,
       touched: false

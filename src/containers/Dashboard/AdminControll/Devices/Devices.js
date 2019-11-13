@@ -55,12 +55,12 @@ const Devices = props => {
     dispatch(actions.deleteDevice(deviceId));
   };
 
-  let renderDevices = error ? (
-    <h5>Devices cannot be loaded</h5>
-  ) : (
-    <CircularProgress />
-  );
-  if (devices) {
+  let renderDevices;
+  if (error) {
+    renderDevices = <h5>Devices cannot be loaded</h5>;
+  } else if (loading) {
+    renderDevices = <CircularProgress />;
+  } else if (devices) {
     renderDevices = devices.map((device, index) => {
       return (
         <div key={device._id} className={classes.EachDevice}>

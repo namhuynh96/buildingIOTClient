@@ -9,14 +9,16 @@ const NavigationItems = props => {
 
   return (
     <ul className={classes.NavigationItems}>
-      <NavigationItem link="/" exact>
-        Main
-      </NavigationItem>
-      {isAdmin && <NavigationItem link="/users">Users</NavigationItem>}
       {props.isAuthenticated ? (
-        <NavigationItem link="/logout">Log out</NavigationItem>
+        <React.Fragment>
+          <NavigationItem link="/" exact>
+            Main
+          </NavigationItem>
+          {isAdmin && <NavigationItem link="/users">Users</NavigationItem>}
+          <NavigationItem link="/logout">Log out</NavigationItem>
+        </React.Fragment>
       ) : (
-        <NavigationItem link="/login">Log in</NavigationItem>
+        <NavigationItem link="/">Log in</NavigationItem>
       )}
     </ul>
   );

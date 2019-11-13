@@ -1,5 +1,6 @@
 import React from "react";
 import { Auth } from "aws-amplify";
+import { withAuthenticator } from "aws-amplify-react";
 
 import classes from "./Authenticate.module.css";
 import Button from "../../components/UI/Button/Button";
@@ -14,4 +15,4 @@ const Authenticate = props => {
   );
 };
 
-export default Authenticate;
+export default withAuthenticator(Authenticate, true);

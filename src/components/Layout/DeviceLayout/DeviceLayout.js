@@ -121,7 +121,8 @@ const DeviceLayout = props => {
                   <span className={styles.Online}></span>
                 )}
                 <div style={{ textAlign: "left", fontWeight: "bold" }}>
-                  {props.deviceName} (id: {props.deviceId})
+                  {props.deviceName}{" "}
+                  {isAdmin && <span>(id: {props.deviceId})</span>}
                 </div>
               </div>
             </Grid>

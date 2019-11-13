@@ -28,17 +28,21 @@ const Rooms = props => {
     <CircularProgress />
   );
   if (rooms) {
-    renderRooms = rooms.map((r, index) => (
-      <div key={r._id}>
-        <RadioButton
-          label={r.name}
-          name="room"
-          value={r.name}
-          changed={() => onChangeRoom(r._id)}
-          checked={r._id === selectedRoomId}
-        />
-      </div>
-    ));
+    if (rooms.length === 0) {
+      renderRooms = <h5>No rooms in this building</h5>;
+    } else {
+      renderRooms = rooms.map((r, index) => (
+        <div key={r._id}>
+          <RadioButton
+            label={r.name}
+            name="room"
+            value={r.name}
+            changed={() => onChangeRoom(r._id)}
+            checked={r._id === selectedRoomId}
+          />
+        </div>
+      ));
+    }
   }
 
   return <div>{renderRooms}</div>;

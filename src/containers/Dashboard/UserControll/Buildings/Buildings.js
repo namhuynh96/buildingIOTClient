@@ -30,7 +30,7 @@ const Buildings = props => {
     <CircularProgress />
   );
   if (buildings) {
-    renderBuildings = buildings.map((b, index) => (
+    renderBuildings = buildings.map(b => (
       <div key={b._id}>
         <RadioButton
           label={b.name}

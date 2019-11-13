@@ -119,8 +119,7 @@ const UpdateDeviceForm = props => {
       value: initialDeviceData.name,
       validation: {
         required: true,
-        checkDuplicatedElementsInArray: true,
-        checkAWSIotPattern: true
+        checkDuplicatedElementsInArray: true
       },
       errorMessage: null,
       valid: true

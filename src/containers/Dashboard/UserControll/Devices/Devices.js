@@ -8,7 +8,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Devices = props => {
   const { selectedRoomId } = useSelector(state => state.rooms);
-  const { devices, error, addedDeviceId } = useSelector(
+  const { devices, loading, error, addedDeviceId } = useSelector(
     state => state.devices
   );
 
@@ -31,23 +31,27 @@ const Devices = props => {
     }
   }, [addedDeviceId, dispatch]);
 
-  let renderDevices = error ? (
-    <h5>Devices cannot be loaded</h5>
-  ) : (
-    <CircularProgress />
-  );
-  if (devices) {
-    renderDevices = devices.map((device, index) => {
-      return (
-        <div key={device._id} className={classes.EachDevice}>
-          <DeviceLayout
-            deviceName={device.name}
-            deviceId={device._id}
-            configs={device.configs}
-          />
-        </div>
-      );
-    });
+  let renderDevices;
+  if (error) {
+    renderDevices = <h5>Devices cannot be loaded</h5>;
+  } else if (loading) {
+    renderDevices = <CircularProgress />;
+  } else if (devices) {
+    if (devices.length === 0) {
+      renderDevices = <h5>No devices in this room</h5>;
+    } else {
+      renderDevices = devices.map((device) => {
+        return (
+          <div key={device._id} className={classes.EachDevice}>
+            <DeviceLayout
+              deviceName={device.name}
+              deviceId={device._id}
+              configs={device.configs}
+            />
+          </div>
+        );
+      });
+    }
   }
 
   return (

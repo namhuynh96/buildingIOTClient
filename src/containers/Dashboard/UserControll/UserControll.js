@@ -32,6 +32,7 @@ const UserControll = props => {
       <Grid container spacing={3}>
         <Grid item xs={2}>
           <Paper className={classes.paper}>
+            <h4>Buildings</h4>
             <Buildings />
           </Paper>
         </Grid>
@@ -40,11 +41,13 @@ const UserControll = props => {
             <Grid container spacing={2}>
               <Grid item xs={2}>
                 <Paper className={classes.paper}>
+                  <h4>Rooms</h4>
                   <Rooms />
                 </Paper>
               </Grid>
               <Grid item xs={10}>
                 <Paper className={classes.paper}>
+                  <h4>Devices</h4>
                   <Devices />
                 </Paper>
               </Grid>
